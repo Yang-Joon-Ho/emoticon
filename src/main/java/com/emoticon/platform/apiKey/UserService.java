@@ -1,6 +1,5 @@
-package com.emoticon.platform.apiKey.service;
+package com.emoticon.platform.apiKey;
 
-import com.emoticon.platform.apiKey.domain.AlarmLog;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Service;

@@ -1,4 +1,4 @@
-package com.emoticon.platform.apiKey.domain;
+package com.emoticon.platform.apiKey;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @AllArgsConstructor
 @Getter
-@Document("image_url")
+@Document("test")
 public class AlarmLog {
 
     @Id
