@@ -20,7 +20,7 @@ public class EmoticonController {
     }
 
     @GetMapping("/list")
-    public List<EmoticonResponseModel> getEmoticonList() {
-        return emoticonService.getEmoticonList();
+    public List<EmoticonResponseModel> getEmoticonList(@RequestParam(required = false) String id, @RequestParam(required = false) String token) {
+        return emoticonService.getEmoticonList(id, token);
     }
 }

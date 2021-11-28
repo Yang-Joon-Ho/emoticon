@@ -1,9 +1,13 @@
 package com.emoticon.platform.emoticon;
 
+import com.emoticon.platform.apiKey.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -18,7 +22,14 @@ public class EmoticonServiceImpl implements EmoticonService{
         mongoTemplate.insert(emoticonUrl);
     }
 
-    public List<EmoticonResponseModel> getEmoticonList() {
+    public List<EmoticonResponseModel> getEmoticonList(String id, String token) {
+
+        Criteria criteria = Criteria.where("id").is(id).and("token").is(token);
+        Query query = Query.query(criteria);
+        User user = mongoTemplate.findOne(query, User.class);
+        if (user == null) {
+            return Collections.emptyList();
+        }
         List<EmoticonUrl> emoticonUrlList = mongoTemplate.findAll(EmoticonUrl.class);
 
         List<EmoticonResponseModel> emoticonResponseModelList =

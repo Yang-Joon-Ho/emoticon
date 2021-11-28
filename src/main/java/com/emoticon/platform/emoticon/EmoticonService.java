@@ -4,5 +4,5 @@ import java.util.List;
 
 public interface EmoticonService {
     public void imageUrlInsert(Long id, String name, String url);
-    public List<EmoticonResponseModel> getEmoticonList();
+    public List<EmoticonResponseModel> getEmoticonList(String id, String token);
 }

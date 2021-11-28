@@ -7,11 +7,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @AllArgsConstructor
 @Getter
-@Document("test")
-public class AlarmLog {
+@Document("user")
+public class User {
 
     @Id
-    private Long id;
-    private String title;
-    private String message;
+    private String id;
+    private String name;
+    private String token;
 }
